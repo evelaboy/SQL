@@ -1,0 +1,42 @@
+--Create a clothing store database
+
+
+CREATE TABLE store (Id INTEGER, name text, size text, color text, cost integer);
+
+INSERT INTO store VALUES 
+(1, "Dress", "small","pink", 50),
+(2,"Blouse", "small", "red",40),
+(3, "Pants", "small","purple",60),
+(4,"shorts", "small", "yellow", 35),
+(5, "slacks", "small", "black", 25),
+(6, "blazer", "small", "navy", 35),
+(7, "capris", "small","blue",25),
+(8, "leggings", "small","blue",26),
+(9,"crop top", "small","lavender",27),
+(10, "jacket","small", "black", 45),
+(11, "Skirt", "small", "Teal", 36), 
+(12, "cami", "medium", "black",10 );
+
+
+--display the database ordered by price. 
+
+SELECT * from Store
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
+
+
+
+
+
+
+
+https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pp/project-design-a-store-database
